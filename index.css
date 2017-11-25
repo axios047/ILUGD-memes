@@ -1,0 +1,148 @@
+body{
+  margin: 0;
+  height: 100vh;
+  position: relative;
+}
+
+a{
+  text-decoration: none;
+  color: #666;
+  font-family: 'Space Mono', monospace;
+}
+
+a:hover{
+  color: #000;
+  border-bottom: 1px solid #000;
+}
+
+header{
+  display: flex;
+  padding: 15px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav{
+  display: flex;
+}
+nav>a{
+  margin: 0px 10px;
+}
+
+.branding{
+  display: flex;
+  align-items: center;
+}
+
+.lug{
+  background: url("https://raw.githubusercontent.com/ILUGD/ilug-d_brand_logo/master/img/ilug-d_logo-3.png");
+  width: 200px;
+  height: 40px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.mem{
+  font-size: 25px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15px;
+  font-family: 'Space Mono', monospace;
+  color: #fff;
+  background: #000;
+  border-radius: 50px;
+  padding: 0px 15px;
+}
+
+.mem>span{
+  margin-top: -5px;
+}
+
+.meme-gallery{
+  width: 85%;
+  column-count: 4;
+  column-gap: 10px;
+  padding: 15px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.meme-item{
+  background-color: #eee;
+  display: inline-block;
+  margin-bottom: 7px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.meme-item:hover > .meme-overlay{
+  display: flex;
+}
+
+.meme-image{
+  width: 100%;
+  border-radius: 5px;
+}
+
+.meme-overlay{
+  width: 100%;
+  position: absolute;
+  background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,0) 25%,rgba(0,0,0,0) 80%,rgba(0,0,0,1) 100%);
+  top: 0;
+  bottom: 0;
+  color: #fff;
+  font-family: 'Space Mono', monospace;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px 10px 5px 10px;
+  box-sizing: border-box;
+}
+
+.meme-overlay>.up{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  animation-name: fromup;
+  animation-duration: 0.1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+@keyframes fromup {
+  0%{
+    transform: translateY(-20px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+
+.meme-overlay>.down{
+  font-family: 'Space Mono', sans-serif;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation-name: fromdown;
+  animation-duration: 0.1s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+}
+@keyframes fromdown {
+  0%{
+    transform: translateY(20px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+
+.meme-overlay>.down>.date{
+  font-size: 12px;
+  color: #aaa;
+}
